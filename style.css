@@ -1,0 +1,128 @@
+/* ---- palette de couleurs ---- */
+:root {
+    --dragons-blood: #8b0606;
+    --valyrian-gold: #ceb877;
+    --dragons-breath: #c53703;  
+    --parchment: #f4eae1;      
+}
+
+/* ---------- Général --------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Cinzel', 'Georgia', serif;
+    color: var(--parchment);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../images/fond-hotd.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+section {
+    border: 3px solid var(--valyrian-gold);
+    padding: 50px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(139, 0, 0, 0.4);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--valyrian-gold);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0 0 40px 0;
+    border-bottom: 1px double var(--valyrian-gold);
+    padding-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* ---------  Formulaire ---------*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-size: 1.3rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 16px;
+    background-color: #1a1a1a;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: var(--parchment);
+    font-size: 1.2rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: var(--dragons-breath);
+    background-color: #222222;
+    outline: none;
+}
+
+button {
+    background-color: var(--dragons-blood);
+    color: var(--parchment);
+    border: 1px solid var(--valyrian-gold);
+    padding: 18px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #b30000;
+    box-shadow: 0 0 20px var(--dragons-breath);
+}
+
+/* ---------- Resultat ----------- */
+#recommencer {
+    background-color: transparent;
+    color: rgba(244, 234, 225, 0.6);
+}
+
+#recommencer:hover {
+    background-color: rgba(139, 0, 0, 0.2);
+    color: var(--parchment);
+}
+
+
+#message {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    background-color: rgba(20, 20, 20, 0.8);
+    padding: 25px;
+    border-left: 5px solid var(--dragons-blood);
+    text-align: left;
+    font-style: italic;
+}
+
+#creatImage {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid var(--valyrian-gold);
+    margin: 25px auto;
+    display: block;
+}
+
+.cache {
+    display: none !important;
+}

@@ -3,37 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link src="./style.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
     <script src="./script.js" defer></script>
     <title>InvoKatastrophe</title>
 </head>
 <body>
     
+<!-- Formulaire / Ecran d'accueil -->
 
-// Étape 1 — Le formulaire (rappel HTML)
-
-// Dans le <body>, une <section> contient le formulaire d'invocation :
-
-//     Un titre <h1> (par exemple "La Machine à Invocation").
-//     Une balise <form> avec l'id invocation contenant :
-//         Un <label> + un <input> pour le prénom, avec l'id prenom.
-//         Un <label> + un <select> pour choisir la créature, avec l'id creature. Mets-y quelques <option> :
-//             🐙 le Chat-Octo
-//             🐉 le Dragon-Debug
-//             🦄 la Licorne-CSS
-//             🦊 le Renard-Refacto
-//         Un <button> pour invoquer.
-
-
-    <section class ="formulaire">
+    <section id="formulaire">
         <h1>InvoKatastrophe</h1>
-        <form id="invocation">
-            <label></label>
-        </form>
+        <form id="invocation"> Choisir un pseudo
+            <label>
+                <input id="prenom">
+            </label>
+            <label>
+                <select id="creature">
+                    <option>Choisir un familier</option>
+                    <option>🐉 Dragon-Debug</option>
+                    <option>🦊 Renard-Refacto</option>
+                    <option>😼 Chat-Octo</option>
+                    <option>🦄 Licorne-CSS </option>
+                    <option>🔮 God-Fémy</option>
+                </select>
+            </label>
 
+            <button id="btnInvok">✨ Invoquer ✨</button>
+        </form>
 
     </section>
 
+<!-- Résultat / section cachée : s'affiche quand on clique sur "invoquer" -->
+
+    <section id="resultat" class="cache">
+        <h1>InvoKatastrophe</h1>
+        <p id="message"></p>
+        <img id="creatImage" src="">
+        <button id="recommencer">Renvoyer la créature</button>
+    </section>
 
 </body>
 </html>
