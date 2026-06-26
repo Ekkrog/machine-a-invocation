@@ -3,37 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link src="./style.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
     <script src="./script.js" defer></script>
     <title>InvoKatastrophe</title>
 </head>
 <body>
     
 
-// Étape 1 — Le formulaire (rappel HTML)
+ <!-- Étape 1 — Le formulaire (rappel HTML)
 
-// Dans le <body>, une <section> contient le formulaire d'invocation :
+ Dans le <body>, une <section> contient le formulaire d'invocation :
 
-//     Un titre <h1> (par exemple "La Machine à Invocation").
-//     Une balise <form> avec l'id invocation contenant :
-//         Un <label> + un <input> pour le prénom, avec l'id prenom.
-//         Un <label> + un <select> pour choisir la créature, avec l'id creature. Mets-y quelques <option> :
-//             🐙 le Chat-Octo
-//             🐉 le Dragon-Debug
-//             🦄 la Licorne-CSS
-//             🦊 le Renard-Refacto
-//         Un <button> pour invoquer.
+    Un titre <h1> (par exemple "La Machine à Invocation").
+    Une balise <form> avec l'id invocation contenant :
+        Un <label> + un <input> pour le prénom, avec l'id prenom.
+        Un <label> + un <select> pour choisir la créature, avec l'id creature. Mets-y quelques <option> :
+            🐙 le Chat-Octo
+            🐉 le Dragon-Debug
+             🦄 la Licorne-CSS
+             🦊 le Renard-Refacto       
+        Un <button> pour invoquer. -->
 
 
-    <section class ="formulaire">
+    <section id="formulaire">
         <h1>InvoKatastrophe</h1>
-        <form id="invocation">
-            <label></label>
-        </form>
+        <form id="invocation"> Choisir un pseudo
+            <label>
+                <input id="prenom">
+            </label>
+            <label>
+                <select id="creature">
+                    <option>Choisir un familier</option>
+                    <option>🐙 Chat-Octo</option>
+                    <option>🐉 Dragon-Debug</option>
+                    <option>🦄 Licorne-CSS</option>
+                    <option>🦊 Renard-Refacto</option>
+                </select>
+            </label>
 
+            <button id="btnInvok">✨ Invoquer ✨</button>
+        </form>
 
     </section>
 
+<!-- Étape 2 — La zone de résultat + le style (rappel CSS)
+Sous le formulaire, ajoute la zone qui accueillera ta créature :
+
+    Une <section> avec l'id resultat, contenant un <p> vide avec l'id message.
+    Dans style.css, crée la classe qui cache un élément :
+
+    Ajoute la classe cache à ta <section id="resultat"> dans le HTML : au chargement, on ne veut voir que le formulaire.
+    Profite de cette étape pour redonner vie à tes réflexes CSS : centre la machine avec Flexbox, choisis une palette, soigne les espacements. Rien n'est imposé — mais une page présentable, c'est le but. -->
+
+    <section id="resultat" class="cache">
+        <p id="message"></p>
+        <button id="recommencer">Renvoyer la créature</button>
+    </section>
 
 </body>
 </html>
