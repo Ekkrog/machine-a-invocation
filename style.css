@@ -1,61 +1,138 @@
+:root {
+    --bg-color: #0d0b18;       /* Violet très sombre, presque noir */
+    --panel-bg: #1a162b;       /* Violet foncé pour les blocs */
+    --neon-purple: #9d4edd;    /* Violet magique éclatant */
+    --neon-cyan: #2ec4b6;      /* Cyan pour le côté tech/debug */
+    --text-color: #e0aaff;     /* Texte violet très clair, reposant */
+    --btn-hover: #c77dff;      /* Teinte de survol pour les boutons */
+}
+
 .cache {
-  display: none;
+  display: none !important;
 }
 
 body {
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background-color: #013361bf;
+    min-height: 90vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: fantasy;
 }
 
-#formulaire {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    padding: 20px;
-    border: 4px double #1a09b0;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.186);
-    color: rgb(16, 149, 194);
+/* -----------  Formulaire -----------*/
+h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px rgba(46, 196, 182, 0.5);
+    margin-bottom: 30px;
+    text-align: center; 
 }
 
-h1 {
-    color: #100152;
-    background-color: #e4e5ea81;
-    padding: 6px;
-    border-radius: 10px;
+section {
+    background-color: var(--panel-bg);
+    border: 2px solid var(--neon-purple);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.2), inset 0 0 15px rgba(157, 78, 221, 0.1);
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box; 
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 100%;
+    gap: 20px;
+    font-size: 1.1rem;
 }
 
-input, select, button {
-    padding: 8px;
-    border-radius: 5px;
-    border: none;
-    color: rgb(57, 12, 203);
-    background-color: #eaedf0bd;
+input, select {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--text-color);
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 8px rgba(46, 196, 182, 0.6);
 }
 
 button {
     background-color: #21088e;
     color: rgb(196, 240, 255);
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-family: inherit;
     font-weight: bold;
+    border-radius: 6px;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(157, 78, 221, 0.4);
+    transition: all 0.2s ease;
 }
 
 button:hover {
-    background-color: #e2e3e9;
-    color: #1a09b0;
+    background: linear-gradient(135deg, var(--btn-hover), var(--neon-purple));
+    box-shadow: 0 0 15px var(--btn-hover);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* -------------- Resultat ----------------- */
+#recommencer {
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    box-shadow: none;
+    margin-top: 20px;
+}
+
+#recommencer:hover {
+    background-color: rgba(46, 196, 182, 0.1);
+    box-shadow: 0 0 10px rgba(46, 196, 182, 0.4);
+}
+
+/* --- 6. Zone de Résultat et Image --- */
+#message {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--neon-cyan);
+    padding-left: 10px;
+    text-align: left;
+}
+
+#creatImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--neon-purple);
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
+    margin: 15px 0;
+}
+
+/* --- 7. La fameuse classe cachée pour le JS --- */
+.cache {
+    display: none !important;
 }
 
 
